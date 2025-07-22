@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>greivance list</title>
+  </head>
+  <body>
+    {% for greivance in greivances %}
+    <p>{{ greivance['id'] }} {{ greivance['name'] }} {{greivance['greivance'] }}</p> <form action="{{ url_for('delete', id=greivance['id']) }}" method="POST">
+      <input type="submit" value="delete"/>
+    </form>
+    <br/>
+    {% endfor %}
+  </body>
+</html>
